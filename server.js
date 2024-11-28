@@ -107,8 +107,8 @@ app.get('/send-push-notifications', async (req, res) => {
 });
 
 // Tarea programada: Ejecuta las notificaciones todos los días a las 8:00 AM
-cron.schedule('59 22 * * *', () => {
-  console.log('Enviando notificaciones...');
+cron.schedule('* * * * *', () => {
+  console.log('Prueba de cron en cada minuto...');
   sendPushNotifications();
 });
 
