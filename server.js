@@ -96,6 +96,16 @@ async function sendPushNotifications() {
   }
 }
 
+app.get('/send-push-notifications', async (req, res) => {
+  try {
+    await sendPushNotifications();
+    res.send('Notificaciones enviadas correctamente.');
+  } catch (error) {
+    console.error('Error al enviar notificaciones:', error);
+    res.status(500).send('Error al enviar notificaciones.');
+  }
+});
+
 // Tarea programada: Ejecuta las notificaciones todos los días a las 8:00 AM
 cron.schedule('59 22 * * *', () => {
   console.log('Enviando notificaciones...');
