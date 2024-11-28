@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv';
+const dotenv = require('dotenv');
 const express = require('express');
 const { Expo } = require('expo-server-sdk');
 const cron = require('node-cron');
@@ -102,7 +102,7 @@ cron.schedule('0 8 * * *', () => {
 });
 
 // Inicia el servidor
-const PORT = 3000;
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
