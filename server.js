@@ -1,7 +1,10 @@
+import * as dotenv from 'dotenv';
 const express = require('express');
 const { Expo } = require('expo-server-sdk');
 const cron = require('node-cron');
 const mongoose = require('mongoose');
+
+dotenv.config();
 
 // Inicializamos el servidor Express
 const app = express();
@@ -11,7 +14,7 @@ app.use(express.json());
 let expo = new Expo();
 
 // Conexión a MongoDB
-mongoose.connect('mongodb+srv://gomex6798:Uus98shCNltSknNc@cluster0.8tw2v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
