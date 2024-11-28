@@ -96,10 +96,11 @@ async function sendPushNotifications() {
 }
 
 // Tarea programada: Ejecuta las notificaciones todos los días a las 8:00 AM
-cron.schedule('0 8 * * *', () => {
+cron.schedule('15 22 * * *', () => {
   console.log('Enviando notificaciones...');
   sendPushNotifications();
 });
+
 
 // Inicia el servidor
 const PORT = process.env.PORT
