@@ -96,7 +96,7 @@ async function sendPushNotifications() {
 }
 
 // Tarea programada: Ejecuta las notificaciones todos los días a las 8:00 AM
-cron.schedule('15 22 * * *', () => {
+cron.schedule('35 22 * * *', () => {
   console.log('Enviando notificaciones...');
   sendPushNotifications();
 });
