@@ -46,7 +46,7 @@ export const programNotification = (notificacion) => {
         const message:ExpoPushMessage = {
           to: token,
           sound: 'default',
-          title: notif.detalles.titulo,
+          title: `Reporte del clima de la finca ${finca.nombre}`,
           body: body,
           data: { withSome: 'data' },
         };
