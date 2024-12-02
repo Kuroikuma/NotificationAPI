@@ -30,7 +30,7 @@ const userSchema = new Schema({
   image: { type: String, default: '' },
   fincaId: { type: String, default: '' },
   pushToToken: { type: String, default: '' }
-}, { timestamps: true });
+});
 
 // Creamos el modelo de usuario
 export const Usuario = mongoose.model<IUsuario>('Usuarios', userSchema);
